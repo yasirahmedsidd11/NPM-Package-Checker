@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPM Package Checker</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        #loading {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .markdown-body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-height: 350px;
+            /* Maximum height before scrolling */
+            overflow-y: auto;
+            /* Show scrollbar only if content overflows */
+            border: 1px solid #ccc;
+            /* Optional: to clearly define the scroll area */
+            padding: 5px;
+            /* Optional: to add some space around the content */
+            box-sizing: border-box;
+            /* Ensures padding is included in height calculation */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>NPM Package Checker</h1>
+
+    <textarea id="jsonInput" rows="10" cols="50" placeholder='Paste your dependencies JSON here'></textarea><br>
+    <button id="checkBtn">Check Packages</button>
+
+    <div id="loading">Loading...</div>
+
+    <table id="packageTable">
+        <thead>
+            <tr>
+                <th>Package Name</th>
+                <th>Current Version</th>
+                <th>New Version</th>
+                <th>Vulnerability</th>
+                <th>What's New</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <!-- Include marked library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
