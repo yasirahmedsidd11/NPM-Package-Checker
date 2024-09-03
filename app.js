@@ -78,7 +78,7 @@ function parseRepositoryURL(url) {
 
 // Function to fetch the latest release or changelog from GitHub
 async function fetchLatestReleaseOrChangelog(owner, repo) {
-    const GITHUB_TOKEN = "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"
+    const GITHUB_TOKEN = "add your github token for accessing public repos"
     try {
         // Fetch the latest release from GitHub
         const releaseResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`, {
