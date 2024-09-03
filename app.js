@@ -78,12 +78,12 @@ function parseRepositoryURL(url) {
 
 // Function to fetch the latest release or changelog from GitHub
 async function fetchLatestReleaseOrChangelog(owner, repo) {
-    const TOKEN = "add your github token for accessing public repos"
+    const GITHUB_TOKEN = "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"
     try {
         // Fetch the latest release from GitHub
         const releaseResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`, {
             headers: {
-                'Authorization': `token ${TOKEN}`
+                'Authorization': `token ${GITHUB_TOKEN}`
             }
         });
 
@@ -94,7 +94,7 @@ async function fetchLatestReleaseOrChangelog(owner, repo) {
             // Fallback: Fetch the CHANGELOG.md file if available
             const changelogResponse = await fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/CHANGELOG.md`, {
                 headers: {
-                    'Authorization': `token ${TOKEN}`
+                    'Authorization': `token ${GITHUB_TOKEN}`
                 }
             });
             if (changelogResponse.ok) {
